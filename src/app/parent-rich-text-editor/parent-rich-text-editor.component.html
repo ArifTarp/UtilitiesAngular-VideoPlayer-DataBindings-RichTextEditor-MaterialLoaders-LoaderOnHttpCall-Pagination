@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Parent Editor</h2>
+            <textarea #textArea [value]="value" id="richEditor"></textarea>
+            <input name="image" type="file" id="upload" class="hidden" onchange="" style="display: none;">
+        </div>
+        <div class="col">
+            <app-child-rich-text-editor [content]="content" (sender)="updateWithNewValue($event)">
+            </app-child-rich-text-editor>
+        </div>
+    </div>
+</div>

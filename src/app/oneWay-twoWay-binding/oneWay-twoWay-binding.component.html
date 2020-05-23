@@ -1,0 +1,18 @@
+<h2>One Way Binding</h2>
+<hr>
+<div>
+  <strong class="inlineCustom">String Binding:</strong><p class="inlineCustom">{{stringBindingData}}</p>
+</div>
+<div>
+  <strong class="inlineCustom">Property Binding:</strong><p class="inlineBlockCustom" [innerHTML]="propertyBindingData"></p>
+</div>
+<div>
+  <strong class="inlineCustom">Event Binding:</strong><input class="inlineCustom" (change)="changeHandlerEventBinding()">
+</div>
+<hr><hr><hr>
+<h2>Two Way Binding</h2>
+<hr>
+<div>
+  <input [(ngModel)]="twoWayBindingData" style="width: 600px;"/>
+  <p>{{twoWayBindingData}}</p>
+</div>

@@ -1,0 +1,10 @@
+<hr>
+<h2>Parent Editor Output :</h2><small>(Please Write On Parent Editor)<br>(If Your Content Does Not Show Here, Please Enter Key On Parent Editor)</small>
+<div [innerHTML]="content" style="border-style: dashed;word-break:break-all;"></div>
+<hr>
+<h2>Child Editor</h2>
+<textarea #textAreaTwo [value]="value" id="richEditorTwo"></textarea>
+<input name="image" type="file" id="upload" class="hidden" onchange="" style="display: none;"> 
+<button type="button" class="btn btn-warning" (click)="sendToRichEditor()" style="margin-top: 20px;">
+    Send Parent Editor<br>If Image Upload, You Have To Press Enter Key On Your Keyboard After You Can Send Content 
+    <br><small>(Because Technical Problem)</small></button>

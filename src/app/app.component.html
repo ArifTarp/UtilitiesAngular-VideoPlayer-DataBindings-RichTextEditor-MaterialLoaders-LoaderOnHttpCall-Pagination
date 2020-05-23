@@ -1,3 +1,22 @@
-<button routerLink="iframeVideo">Video Player With IFrame</button><br><hr>
-<button routerLink="youtubeVideo">Video Player With YouTube Player</button>
+<div *ngIf="isMainPage">
+    <button routerLink="iframeVideo">Video Player With IFrame</button>
+    <br>
+    <hr>
+    <button routerLink="youtubeVideo">Video Player With YouTube Player</button>
+    <br>
+    <hr>
+    <button routerLink="richTextEditor">Rich Text Editor</button>
+    <br>
+    <hr>
+    <button routerLink="angularMaterialLoaders">Angular Material Loaders</button>
+    <br>
+    <hr>
+    <button routerLink="myLoader" (click)="makeHttpCall()">My Loader</button>
+    <br>
+    <hr>
+    <button routerLink="pagination">Pagination</button>
+    <br>
+    <hr>
+    <button routerLink="oneWayTwoWayBindings">One Way And Two Way Bindings</button>
+</div>
 <router-outlet></router-outlet>

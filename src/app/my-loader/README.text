@@ -1,0 +1,53 @@
+We assumed services(loader and loader-interceptor) prepared in before.....
+If you want to use loader screen on different component, make the following steps;
+1-) Added your want to inside of yourwantbla.component.ts
+loading: boolean;
+
+  constructor(private loaderService: LoaderService) {
+
+    this.loaderService.isLoading.subscribe((v) => {
+      console.log(v);
+      this.loading = v;
+    });
+
+  }
+2-) Added your want to inside of yourwantbla.component.html
+<div class="progress-loader" [hidden]="!loading">
+  <div class="loading-spinner">
+      <img src="../../assets/gear-animation.svg">
+      <span class="loading-message">Please wait...</span>
+  </div>
+</div>
+3-) Added your want to inside of yourwantbla.component.css
+.loading-spinner{    
+    background-color: #0000001f;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+}
+
+.loading-spinner img{
+    align-self: end;
+}
+
+.loading-message{
+    text-align: center;
+    align-self: start;
+}
+4-) Your want to component route and httpcall in another component
+ **** another.component.html ****
+ <button routerLink="yourwantbla" (click)="makeHttpCall()">Your Want To Component</button>
+ **** another.component.ts ****
+ makeHttpCall() {
+    for (let index = 0; index < 20; index++) {
+      this.httpClient.get('https://jsonplaceholder.typicode.com/comments')
+      .subscribe((r) => {
+        console.log(r);
+      });
+    }
+  }
